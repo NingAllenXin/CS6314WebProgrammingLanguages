@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="babynames.css" type="text/css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#button").click(function(){
+                if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else{
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function(){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        $("#result").html(xmlhttp.responseText);
+                    }
+                };
+                xmlhttp.open("GET", "babynames.php?gender=" + $("#gender").val() + "&year=" + $("#year").val(), true);
+                xmlhttp.send();
+            });
+        });
+    </script>
+    <title>BabyNames</title>
+</head>
+
+<body>
+<form>
+    <label>Gender</label>
+    <select name="gender" id="gender">
+        <option value="">Select a gender</option>
+        <option value="m">male</option>
+        <option value="f">female</option>
+    </select>
+    <label>Year</label>
+    <select name="year" id="year">
+        <option value="">Select a year</option>
+        <option>2005</option>
+        <option>2006</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+        <option>2013</option>
+        <option>2014</option>
+        <option>2015</option>
+    </select>
+    <button type="button" id="button">Submit</button>
+</form>
+<br />
+<div id="result">
+</div>
+</body>
+
+</html>

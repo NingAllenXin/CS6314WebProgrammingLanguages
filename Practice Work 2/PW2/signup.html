@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Practise Work 2</title>
+    <link href="pw2.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/JavaScript" src="pw2.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<form method="post" id="signupForm" name="signupForm">
+    <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account!</p>
+        <hr>
+        <input type="firstName" placeholder="First Name" id="firstName" required="true">
+        <input type="lastName" placeholder="Last Name" id="lastName" required="true">
+        <input type="text" placeholder="Email" id="email" required="true">
+        <input type="password" placeholder="Password" id="password" required="true">
+        <input type="password" placeholder="Confirm Password" id="repassword" required="true" onkeyup="validate()">
+        <span id="tishi"></span>
+        <br>
+        <input type="checkbox" name="TermsPrivacy" id = "cb" style="margin-bottom:15px"> I accept the <a href="#">Terms of Use</a> & <a href='#'>Privacy Policy</a>.
+        <span id="cbText"></span>
+        <br>
+        <button type="submit" class="registerbtn">Sign Up</button>
+    </div>
+
+
+</form>
+
+</body>
+</html>
+
